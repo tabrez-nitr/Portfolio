@@ -4,7 +4,7 @@ import Navigation from './components/Naviagtion'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
 import About from './components/About'
-import Home from './components/home'
+import Home from './components/Home'
 import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
 
