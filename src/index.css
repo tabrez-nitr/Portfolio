@@ -1,68 +1,131 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+html, body {
+  background-color: #0f172a;
+  color: white;             
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+body{
+  margin: 0px;
+  padding: 0px;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+.nav-link {
+  position: relative;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  font-size: 18px;
+  transition: color 0.3s ease;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+.nav-link::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;                   
+  width: 0;
+  height: 2px;
+  background: #31D978;
+  transition: all 0.4s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::before {
+  width: 100%;                  
+  left: 0;
+  transform: translateX(0);
+}
+
+.nav-link:hover {
+  color: #31D978;
+}
+.social-logo:hover{
+  opacity: 0.7;
+}
+.aboutBtn:hover{
+  opacity: 0.7;
+}
+.selected{
+  color: #31D978;
+  border-bottom: 2px solid #31D978;
+}
+.logo-container{
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 65px;
+}
+.skillLogo{
+  width: 180px;
+  height: 180px;
+  transition: transform 0.3s ease-in-out;
+}
+.skillLogo:hover{
+  transform: scale(1.2);  
+}
+.card{
+  width: 350px;
+  height: 400px;
+  border: 1px solid black;
+  padding: 20px 30px;
+  text-align: center;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);   /* More transparent background */
+  backdrop-filter: blur(18px);              /* Stronger blur for glass effect */
+  -webkit-backdrop-filter: blur(18px);      /* Safari compatibility */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); /* Softer shadow */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtler border */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+.card:hover {
+  transform: translateY(-10px); 
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+.projectImage{
+  width:200px;
+  height: 200px;
+  text-align: center;
+  margin-bottom: 25px;  
+  padding: 10px 10px;
+  border-radius: 4px;
+  transition: transform 0.4s ease;
+}
+
+
+.imageProjectContainer:hover .projectImage{
+  transform: scale(1.1);
+}
+.projectbtn{
+  border: 1px solid #31D978;
+  color: #31D978;
+  padding: 9px 30px;
+  border-radius: 8px;
+  opacity: 0.9;
+}
+.projectbtn:hover{
+  opacity: 0.7;
+}
+.project-conatiner{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+
+.navigation-bar {
+  display: block;
+}
+.about-paragraph{
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+@media (max-width: 768px) {
+  .navigation-bar {
+    display: none !important;   /* Force hide it */
   }
 }
