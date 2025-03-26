@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 const Projects = () => {
     return ( 
     <div id="projects" style={{
-        padding:'0px 200px 200px 200px'
+        padding: "0px 20% 25% 20%"
     }}>
       <motion.h2 style={{
         fontSize:'60px',

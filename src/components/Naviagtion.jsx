@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 
+
 const Navigation = () => {
 
 
@@ -18,12 +19,11 @@ const Navigation = () => {
       scrollToSection(index);
      }
     return ( 
-        <div style={{
-            
+        <div className="nav-main-container" style={{  
             display:'flex',
             justifyContent:'center'
         }}>
-       <nav className="flex" style={{
+       <nav className="flex navigation-bar" style={{
         color:'white',
         display:'flex',
         justifyContent:'space-between',
@@ -72,6 +72,9 @@ const Navigation = () => {
          className={selected == 5 ? 'nav-link selected' : "nav-link"}>Contact me</h2>
          </div>
        </nav>
+        
+       
+
        </div>
      );
 }

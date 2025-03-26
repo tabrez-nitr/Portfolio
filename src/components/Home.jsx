@@ -31,7 +31,7 @@ const Home = () => {
         color: "white",
         zIndex: "1",
         marginTop: "10%",
-        padding: "0px 200px 200px 200px",
+        padding: "0px 20% 25% 20%",
       }}
     >
       <motion.h2 variants={itemVariants}>Software Developer</motion.h2>
