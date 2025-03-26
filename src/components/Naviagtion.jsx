@@ -1,6 +1,22 @@
+import { useState } from "react";
 
 
 const Navigation = () => {
+
+
+   const scrollToSection = (index) => {
+      const sectionIds = ['home', 'skills', 'projects', 'about', 'contact'];
+      const section = document.getElementById(sectionIds[index - 1]);
+      if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+      }
+  }
+
+    const [selected , setSelected] = useState(1);
+     const handelClick =(index) => {
+      setSelected(index);
+      scrollToSection(index);
+     }
     return ( 
         <div style={{
             
@@ -30,7 +46,8 @@ const Navigation = () => {
             fontSize:'20px',
             padding:'none',
             
-         }}>tabrez<span style={{
+         }} 
+          >tabrez<span style={{
             color :'#31D978',
             fontSize:'22px',
             padding:'none'
@@ -42,11 +59,17 @@ const Navigation = () => {
             gap:'20px',
             
          }}>
-         <h2 className="nav-link">Home</h2>
-         <h2 className="nav-link">Skills</h2>
-         <h2 className="nav-link">Projects</h2>
-         <h2 className="nav-link">About</h2>
-         <h2 className="nav-link">Cotact me</h2>
+         <h2 
+                      onClick={()=>handelClick(1)}
+         className={selected == 1 ? 'nav-link selected' : "nav-link"}>Home</h2>
+         <h2          onClick={()=>handelClick(2)}
+         className={selected == 2 ? 'nav-link selected' : "nav-link"}>Skills</h2>
+         <h2          onClick={()=>handelClick(3)}
+         className={selected == 3 ? 'nav-link selected' : "nav-link"}>Projects</h2>
+         <h2          onClick={()=>handelClick(4)}
+         className={selected == 4 ? 'nav-link selected' : "nav-link"}>About</h2>
+         <h2          onClick={()=>handelClick(5)}
+         className={selected == 5 ? 'nav-link selected' : "nav-link"}>Contact me</h2>
          </div>
        </nav>
        </div>

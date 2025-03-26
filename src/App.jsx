@@ -5,6 +5,7 @@ import Skills from './components/Skills'
 import Projects from './components/Projects'
 import About from './components/About'
 import Home from './components/home'
+import Contact from './components/Contact.jsx'
 
 
 
@@ -21,6 +22,10 @@ function App() {
     }}>
       <Navigation/>
       <Home/>
+      <Skills/>
+      <Projects/>
+      <About/>
+
       
 </div>
   )
