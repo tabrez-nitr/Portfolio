@@ -11,7 +11,7 @@ import Tailwind from '../assets/Tailwind.svg';
 const Skills = () => {
 
     return (
-        <div id="skills" style={{ padding: "0px 20% 25% 20%"}}>
+        <div id="skills" style={{ padding: "8% 20% 25% 20%"}}>
             
             {/* Motion only for Skills. */}
             <motion.h2 

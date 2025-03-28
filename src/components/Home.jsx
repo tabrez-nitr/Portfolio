@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-
+import { TypeAnimation } from 'react-type-animation';
 
 const Home = () => {
 
@@ -22,8 +22,8 @@ const Home = () => {
   };
 
   return (
-    <motion.div 
-     id="home"
+    <motion.div
+      id="home"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -43,12 +43,28 @@ const Home = () => {
         Hello I'm
       </motion.h2>
 
-      <motion.h2
-        variants={itemVariants}
-        style={{ fontSize: "80px", color: "#31D978" }}
-      >
-        Sams Tabrez
-      </motion.h2>
+      {/* Typing Animation */}
+      <TypeAnimation
+        sequence={[
+          'Sams Tabrez',    // First text
+          4000,              // Pause for 1 second
+          '',                // Erase it
+          1000,               // Pause before starting again
+          'A Web Developer', // Second text
+          3000,              // Pause again
+          '',                // Erase again
+          500,
+          'A Programmer',    // Third text
+          3000,
+          '',                // Erase again
+          1000,
+          'Sams Tabrez'      // Back to the original
+        ]}
+        wrapper="span"
+        speed={5}             // Typing speed
+        repeat={Infinity}      // Infinite loop
+        style={{ fontSize: '60px', color: '#31D978', display: 'inline-block' }}
+      />
 
       <motion.p
         variants={itemVariants}
@@ -137,8 +153,8 @@ const Home = () => {
             </svg>
           </motion.a>
 
-          {/* Instagram */}
-          <motion.a
+           {/* Instagram */}
+           <motion.a
             href="https://www.instagram.com/tabrez__sams/"
             target="_blank"
             rel="noopener noreferrer"
@@ -157,7 +173,6 @@ const Home = () => {
               <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
             </svg>
           </motion.a>
-
         </motion.div>
       </motion.div>
     </motion.div>
