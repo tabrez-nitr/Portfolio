@@ -1,23 +1,25 @@
 import { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+
 
 
 
 const Navigation = () => {
 
 
-   const scrollToSection = (index) => {
-      const sectionIds = ['home', 'skills', 'projects', 'about', 'contact'];
-      const section = document.getElementById(sectionIds[index - 1]);
-      if (section) {
-          section.scrollIntoView({ behavior: 'smooth' });
-      }
-  }
+//    const scrollToSection = (index) => {
+//       const sectionIds = ['home', 'skills', 'projects', 'about', 'contact'];
+//       const section = document.getElementById(sectionIds[index - 1]);
+//       if (section) {
+//           section.scrollIntoView({ behavior: 'smooth' });
+//       }
+//   }
 
-    const [selected , setSelected] = useState(1);
-     const handelClick =(index) => {
-      setSelected(index);
-      scrollToSection(index);
-     }
+   //  const [selected , setSelected] = useState(1);
+   //   const handelClick =(index) => {
+   //    setSelected(index);
+   //    scrollToSection(index);
+   //   }
     return ( 
         <div className="nav-main-container" style={{  
             display:'flex',
@@ -59,7 +61,7 @@ const Navigation = () => {
             gap:'20px',
             
          }}>
-         <h2 
+         {/* <h2 
                       onClick={()=>handelClick(1)}
          className={selected == 1 ? 'nav-link selected' : "nav-link"}>Home</h2>
          <h2          onClick={()=>handelClick(2)}
@@ -70,7 +72,36 @@ const Navigation = () => {
          className={selected == 4 ? 'nav-link selected' : "nav-link"}>About</h2>
          <h2          onClick={()=>handelClick(5)}
          className={selected == 5 ? 'nav-link selected' : "nav-link"}>Contact me</h2>
-         </div>
+          */}
+
+
+          <NavLink to={''}  className={
+            ({isActive})=> isActive ? 'nav-link selected':'nav-link'
+            }>
+            Home
+          </NavLink>
+          <NavLink to={'/skills'}  className={
+            ({isActive})=> isActive ? 'nav-link selected':'nav-link'
+            }>
+            Skills
+          </NavLink>
+          <NavLink to={'/projects'} className={
+            ({isActive})=> isActive ? 'nav-link selected':'nav-link'
+            }> 
+          Projects 
+          </NavLink>
+          <NavLink to={'/about'}   className={
+            ({isActive})=> isActive ? 'nav-link selected':'nav-link'
+            }>
+            About
+          </NavLink>
+          <NavLink to={'/contact'}  className={
+            ({isActive})=> isActive ? 'nav-link selected':'nav-link'
+            }>
+            Contact me
+          </NavLink>
+          
+          </div>
        </nav>
         
        

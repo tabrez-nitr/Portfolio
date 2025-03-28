@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const About = () => {
     return ( 
         <div id="about" style={{
-            padding:'0 20% 40% 20%'
+            padding:'10% 20% 40% 20%'
         }}>
             <motion.h2 initial={{ opacity: 0, x: -50 }} 
                 whileInView={{ opacity: 1, x: 0 }}
