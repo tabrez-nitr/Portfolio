@@ -27,9 +27,7 @@ function App() {
       <Projects/>
       <About/>
       <Footer/>
-
-      
-</div>
+    </div>
   )
 }
 
